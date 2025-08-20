@@ -1,0 +1,22 @@
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Dataset folders (to avoid accidentally uploading large files)
+BrainTumor/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+*.env
+
+# Anaconda environment
+*.conda
+env/
+venv/
