@@ -10,9 +10,11 @@ numpy>=1.26.4  # Required by Ultralytics and ONNX
 protobuf>=4.25.8  # Required by ONNX
 onnxruntime>=1.22.1  # ONNX runtime for inference
 pillow>=9.5.0  # For image processing
+opencv-python-headless>=4.10.0  # Headless OpenCV to avoid libGL.so.1 dependency
 
 # Notes:
 # - Designed for Streamlit Community Cloud (Python 3.13.5, Linux).
+# - Uses opencv-python-headless to avoid graphical library dependencies.
 # - Uses ONNX runtime for lightweight CPU-based inference.
 # - Install with: `pip install -r requirements.txt` locally for testing.
 # - Ensure app.py is the main module and includes Streamlit logic.
