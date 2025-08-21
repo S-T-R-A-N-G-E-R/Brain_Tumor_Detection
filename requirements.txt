@@ -1,6 +1,6 @@
 # Requirements for Brain Tumor Detection with YOLOv8 (Streamlit Deployment)
 # Optimized for Streamlit Community Cloud (Python 3.13.5, Linux environment)
-# Compatible with YOLOv8-based brain tumor detection app
+# Minimal dependencies for Streamlit app with YOLOv8 inference
 
 # Core dependencies
 streamlit>=1.39.0  # Streamlit for web app interface
@@ -8,29 +8,13 @@ ultralytics>=8.3.182  # YOLOv8 framework
 torch>=2.8.0  # PyTorch (CPU support for Linux deployment)
 numpy>=1.26.4  # Required by Ultralytics and ONNX
 protobuf>=4.25.8  # Required by ONNX
-
-# ONNX export dependencies
-onnx>=1.12.0,<1.18.0  # ONNX model export
-onnxslim>=0.1.59  # ONNX model optimization
 onnxruntime>=1.22.1  # ONNX runtime for inference
-
-# Additional dependencies for visualizations and utilities
-matplotlib>=3.8.0  # For plotting training metrics (confusion matrix, PR curves)
-pandas>=2.2.2  # For data handling and analysis
 pillow>=9.5.0  # For image processing
-pyyaml>=6.0.1  # For parsing data.yaml
-requests>=2.31.0  # For downloading pretrained weights
-tqdm>=4.66.3  # For progress bars in Ultralytics
-
-# Development tools
-jupyter>=1.0.0  # For running training.ipynb (optional for deployment)
-colorama>=0.4.6  # For colored terminal output (onnxslim)
-humanfriendly>=10.0  # For coloredlogs (onnxruntime dependency)
-coloredlogs>=15.0.1  # For ONNX runtime logging
 
 # Notes:
 # - Designed for Streamlit Community Cloud (Python 3.13.5, Linux).
-# - PyTorch uses CPU backend (no MPS/GPU in Streamlit Cloud).
+# - Uses ONNX runtime for lightweight CPU-based inference.
 # - Install with: `pip install -r requirements.txt` locally for testing.
 # - Ensure app.py is the main module and includes Streamlit logic.
-# - Large files (BrainTumor/, runs/, *.pt, *.onnx) should be excluded via .gitignore.
+# - Model file (best.onnx) must be included in the repository or downloaded in app.py.
+# - Large files (BrainTumor/, runs/, *.pt, *.onnx) should be excluded via .gitignore, except for best.onnx if needed.
